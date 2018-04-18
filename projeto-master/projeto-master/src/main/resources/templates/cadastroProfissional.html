@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ComuniCar</title>
+
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" href="../static/font-awesome/css/font-awesome.min.css"th:href="@{/font-awesome/css/font-awesome.min.css}">
+		<link rel="stylesheet" href="../static/css/form-elements.css"th:href="@{/css/form-elements.css}">
+        <link rel="stylesheet" href="../static/css/style.css"th:href="@{/css/style.css}">
+        <link rel="shortcut icon" href="../static/img/Logo/logo1.png" type="image/x-icon" th:href="@{/css/Layout.css}" />
+
+    </head>
+
+    <body>
+        
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>FastBeauty</strong></h1>
+                            <div class="description">
+                            	<p>
+	                            	<strong>A beleza vai até você</strong>
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        		  <h3>Fique linda, com apenas um toque.</h3>
+                        		  <p>Insira seus dados abaixo para concluir o cadastro</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<img src="assets/img/logo/Logo1.png" alt="FastBeauty">
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+                                
+			                    <form role="form" th:action="@{/cadastroCliente}" th:object="${cliente}" method="post" class="register-form">
+			                    	<div class="form-group"th:classappend="${#fields.hasErrors('nome')}? 'has-error':''">
+			                    		<label class="sr-only" for="form-nome">nome<span class="required">*</span>
+                                        </label>
+			                        	<input th:field="*{nome}" required="required" type="text" name="form-nome" placeholder="Nome..." class="form-nome form-control" id="form-nome">
+                                        <p class="error-message"
+                                        th:each="error: ${#fields.errors('nome')}"
+                                        th:text="${error}">Validation error</p>
+			                        </div>
+                                    <div class="form-group"th:classappend="${#fields.hasErrors('rg')}? 'has-error':''">
+			                    		<label class="sr-only" for="form-rg">rg<span class="required">*</span>
+                                        </label>
+			                        	<input th:field="*{rg}" required="required" type="text" name="form-rg" placeholder="Rg..." class="form-rg form-control" id="form-rg">
+                                        <p class="error-message"
+                                        th:each="error: ${#fields.errors('rg')}"
+                                        th:text="${error}">Validation error</p>
+			                        </div>
+                                     <div class="form-group"th:classappend="${#fields.hasErrors('cpf')}? 'has-error':''">
+			                    		<label class="sr-only" for="form-nome">cpf<span class="required">*</span>
+                                        </label>
+			                        	<input th:field="*{cpf}" required="required" type="text" name="form-cpf" placeholder="cpf..." class="form-nome form-control" id="form-cpf">
+                                        <p class="error-message"
+                                        th:each="error: ${#fields.errors('cpf')}"
+                                        th:text="${error}">Validation error</p>
+			                        </div>
+                                    <div class="form-group"th:classappend="${#fields.hasErrors('endereco')}? 'has-error':''">
+			                    		<label class="sr-only" for="form-nome">endereco<span class="required">*</span>
+                                        </label>
+			                        	<input th:field="*{endereco}" required="required" type="text" name="form-endereco" placeholder="Endereço..." class="form-endereco form-control" id="form-endereco">
+                                        <p class="error-message"
+                                        th:each="error: ${#fields.errors('endereco')}"
+                                        th:text="${error}">Validation error</p>
+			                        </div>
+                                    <div class="form-group"th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
+			                    		<label class="sr-only" for="form-nome">email<span class="required">*</span>
+                                        </label>
+			                        	<input th:field="*{email}" required="required" type="text" name="form-email" placeholder="e-mail..." class="form-nome form-control" id="form-email">
+                                        <p class="error-message"
+                                        th:each="error: ${#fields.errors('email')}"
+                                        th:text="${error}">Validation error</p>
+			                        </div>
+			                        <div class="form-group"th:classappend="${#fields.hasErrors('confirmEmail')}? 'has-error':''">
+			                    		<label class="sr-only" for="form-confirmEmail">confirmar email<span class="required">*</span>
+                                        </label>
+			                        	<input th:field="*{confirmEmail}" required="required" type="text" name="form-confirmEmail" placeholder="confirmar e-mail..." class="form-confirmEmail form-control" id="form-confirmEmail">
+                                        <p class="error-message"
+                                        th:each="error: ${#fields.errors('confirmEmail')}"
+                                        th:text="${error}">Validation error</p>
+			                        </div>
+			                        <div class="form-group"th:classappend="${#fields.hasErrors('password')}? 'has-error':''">
+			                    		<label class="sr-only" for="form-password">senha<span class="required">*</span>
+                                        </label>
+			                        	<input th:field="*{password}" required="required" type="password" name="form-password" placeholder="Senha..." class="form-nome form-control" id="form-password">
+                                        <p class="error-message"
+                                        th:each="error: ${#fields.errors('password')}"
+                                        th:text="${error}">Validation error</p>
+			                        </div>
+    								<div class="form-group"th:classappend="${#fields.hasErrors('confirmPassword')}? 'has-error':''">
+			                    		<label class="sr-only" for="form-nome">Confirmar senha<span class="required">*</span>
+                                        </label>
+			                        	<input th:field="*{confirmPassword}" required="required" type="password" name="form-confirmPassword" placeholder="Confirmar senha..." class="form-confirmPassword form-control" id="form-confirmPassword">
+                                        <p class="error-message"
+                                        th:each="error: ${#fields.errors('confirmPassword')}"
+                                        th:text="${error}">Validation error</p>
+			                        </div>
+			                        <button type="submit" class="btn">Registrar</button>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+
+
+    </body>
+
+</html>
