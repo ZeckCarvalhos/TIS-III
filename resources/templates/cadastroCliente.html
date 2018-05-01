@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 
     <head>
 
@@ -74,44 +74,44 @@
 			                    	<div class="form-group"th:classappend="${#fields.hasErrors('nome')}? 'has-error':''">
 			                    		<label class="sr-only" for="form-nome">nome<span class="required">*</span>
                                         </label>
-			                        	<input required="required" type="text" name="form-nome" placeholder="Nome..." class="form-nome form-control" id="form-nome">
+			                        	<input type="text" name="form-nome" placeholder="Nome..." class="form-nome form-control" id="form-nome" required="required"><span class = "required">*</span> 
 			                        </div>
                                     <div class="form-group"th:classappend="${#fields.hasErrors('rg')}? 'has-error':''">
 			                    		<label class="sr-only" for="form-rg">rg<span class="required">*</span>
                                         </label>
-			                        	<input required="required" type="text" name="form-rg" placeholder="Rg..." class="form-rg form-control" id="form-rg">
+			                        	<input type="text" name="form-rg" placeholder="Rg..." class="form-rg form-control" id="form-rg" required="required"><span class = "required">*</span> 
 			                        </div>
                                      <div class="form-group"th:classappend="${#fields.hasErrors('cpf')}? 'has-error':''">
 			                    		<label class="sr-only" for="form-nome">cpf<span class="required">*</span>
                                         </label>
-			                        	<input required="required" type="text" name="form-cpf" placeholder="cpf..." class="form-nome form-control" id="form-cpf">
+			                        	<input type="text" name="form-cpf" placeholder="cpf..." class="form-nome form-control" id="form-cpf" required="required"><span class = "required">*</span>
 			                        </div>
                                     <div class="form-group"th:classappend="${#fields.hasErrors('endereco')}? 'has-error':''">
 			                    		<label class="sr-only" for="form-nome">endereco<span class="required">*</span>
                                         </label>
-			                        	<input required="required" type="text" name="form-endereco" placeholder="Endereço..." class="form-endereco form-control" id="form-endereco">
+			                        	<input type="text" name="form-endereco" placeholder="Endereço..." class="form-endereco form-control" id="form-endereco" required="required"><span class = "required">*</span>
 			                        </div>
                                     <div class="form-group"th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
 			                    		<label class="sr-only" for="form-nome">email<span class="required">*</span>
                                         </label>
-			                        	<input required="required" type="text" name="form-email" placeholder="e-mail..." class="form-nome form-control" id="form-email">
+			                        	<input type="text" name="form-email" placeholder="e-mail..." class="form-nome form-control" id="form-email" required="required"><span class = "required">*</span>
 			                        </div>
 			                        <div class="form-group"th:classappend="${#fields.hasErrors('confirmEmail')}? 'has-error':''">
 			                    		<label class="sr-only" for="form-confirmEmail">confirmar email<span class="required">*</span>
                                         </label>
-			                        	<input  required="required" type="text" name="form-confirmEmail" placeholder="confirmar e-mail..." class="form-confirmEmail form-control" id="form-confirmEmail">
+			                        	<input type="text" name="form-confirmEmail" placeholder="confirmar e-mail..." class="form-confirmEmail form-control" id="form-confirmEmail" required="required"><span class = "required">*</span>
 			                        </div>
 			                        <div class="form-group"th:classappend="${#fields.hasErrors('password')}? 'has-error':''">
 			                    		<label class="sr-only" for="form-password">senha<span class="required">*</span>
                                         </label>
-			                        	<input required="required" type="password" name="form-password" placeholder="Senha..." class="form-password form-control" id="form-password">
+			                        	<input type="password" name="form-password" placeholder="Senha..." class="form-password form-control" id="form-password" required="required"><span class = "required">*</span><br>
 			                        </div>
     								<div class="form-group"th:classappend="${#fields.hasErrors('confirmPassword')}? 'has-error':''">
 			                    		<label class="sr-only" for="form-nome">Confirmar senha<span class="required">*</span>
                                         </label>
-			                        	<input required="required" type="password" name="form-confirmPassword" placeholder="Confirmar senha..." class="form-confirmPassword form-control" id="form-confirmPassword">
+			                        	<input type="password" name="form-confirmPassword" placeholder="Confirmar senha..." class="form-confirmPassword form-control" id="form-confirmPassword" required="required"><span class = "required">*</span><br>
 			                        </div>
-			                        <button type="submit" onclick = "cadastrarCliente()" class="btn">Registrar</button>
+			                        <button type="submit" onclick = "verificaCampos()" class="btn">Registrar</button>
 			                    </div>
 		                    </div>
                         </div>
