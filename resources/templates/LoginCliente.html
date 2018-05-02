@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>FastBeauty</title>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-firestore.js"></script>
+        
+    </head>
+    
+    <body onload="agendamentosCliente()">
+        <div name = "a">
+            <div id="user">
+
+            </div>
+        </div>
+        
+        <div id = "agendamentos">
+            
+        </div>
+        
+        <script>
+            window.onload = function(){
+                var nome = localStorage.getItem("nome");
+                document.getElementById("user").innerHTML = "Bem vindo " + nome;
+            }
+        </script>
+        <!-- Javascript -->
+        <script src="../static/js/cadastroCliente.js"></script>
+        
+        
+    </body>
+</html>
