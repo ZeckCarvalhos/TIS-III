@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-firestore.js"></script>
 
     <title>FastBeauty</title>
 
@@ -60,7 +63,7 @@
                         		</div>
                             </div>
                             <div class="form-bottom">
-			                    <form role="form" th:action="@{/login}" method="post" class="e-mail-form">
+			                    <div role="form" class="e-mail-form">
 			                    	<div class="form-group">
 			                    		<label class="sr-only" for="form-e-mail">E-mail</label>
 			                        	<input type="text" id="username" name="username" class="form-control" placeholder="Usuário" required="" />
@@ -69,9 +72,9 @@
 			                        	<label class="sr-only" for="form-password">Senha</label>
 			                             <input type="password" id="Password" name="password" class="form-control" placeholder="Senha" required="" />
 			                        </div>
-			                        <button type="submit" class="btn">Entrar</button>
+			                        <button type="submit" class="btn" onclick = "fazLogin();">Entrar</button>
                                     <button type="submit" class="btn">Registrar</button>
-			                    </form>
+			                    </div>
 		                    </div>
                         </div>
                     </div>
@@ -79,6 +82,6 @@
             </div>
             
         </div>
-
+        <script src="../static/js/cadastroCliente.js"></script>
 </body>
 </html>

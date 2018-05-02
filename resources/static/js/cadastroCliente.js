@@ -36,7 +36,6 @@ function verificaCadastro(){
                     var cliente = doc.data();
                     if(doc.id == document.getElementById("form-cpf").value){
                         jaExiste = true;
-                        break;
                     }
                 });
             if(jaExiste == true){
@@ -137,4 +136,59 @@ function verificaCampos(){
     else{
         alert("Favor preencher todos os campos obrigatórios")
     }
+}
+
+//Função para realizar login
+function fazLogin(){
+    var usuario = document.getElementById("username").value;
+    var senha = document.getElementById("Password").value;
+    var nome;
+    db.collection("clientes").get().then(
+        function(listaClientes) {
+            var loginValido = false;
+            listaClientes.forEach(
+                function(doc) {
+                    var cliente = doc.data();
+                    if(cliente.email == usuario && cliente.senha == senha){
+                       loginValido = true;
+                        nome = cliente.nome;
+                    }
+                });
+            if(loginValido == true){
+                //A função Local Storage guarda dados em uma espécie de cache do navegador.
+                localStorage.setItem("usuario", usuario);
+                localStorage.setItem("senha", senha);
+                localStorage.setItem("nome", nome);
+                
+                 window.location.href = "../templates/loginCliente.html";
+            }
+            else{
+                alert("Usuário ou senha inválidos");
+            }
+    });
+}
+
+//Função para carregar os agendamentos do ciente
+function agendamentosCliente(){
+    //var usuario = localStorage.getItem("nome");
+    var usuario = "eu";
+    db.collection("agendamentos").get().then(
+        function(listaAgendamentos) {
+            var tabelaHTML = "";
+            
+            //Montagem de uma tabela de agendamentos
+            tabelaHTML = "<table border=1>";
+            
+            listaAgendamentos.forEach(
+                function(doc) {
+                    var agendamento = doc.data();
+                    if(usuario == agendamento.cliente){
+                        tabelaHTML += '<td><p> Serviço ' + agendamento.servico;
+                        tabelaHTML += '<p> Profissional ' + agendamento.profissional + '</p> <br> <br>';
+                        tabelaHTML += '<p> Data ' + agendamento.data + '<br> </p> </td>'; 
+                    }
+                });
+            tabelaHTML += "</table>";
+            document.getElementById("agendamentos").innerHTML = tabelaHTML;
+    });
 }
